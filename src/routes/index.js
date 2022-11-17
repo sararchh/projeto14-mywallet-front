@@ -5,6 +5,8 @@ import RecordWallet from '../pages/recordWallet';
 import SignIn from '../pages/signIn';
 import SignUp from '../pages/signUp';
 
+import ProtectedRoutes from "./protectedRoutes"
+
 const NotFound = () => {
   return (
     <p>Não encontrado</p>
@@ -16,11 +18,12 @@ function RoutesApp() {
     <>
       <Routes>
 
-        <Route path='*' element={<NotFound />} />
         <Route path='/' element={<SignIn />} />
         <Route path='/signUp' element={<SignUp />} />
-        <Route path='/my-wallet' element={<RecordWallet />} />
 
+        <Route path='/my-wallet' element={<ProtectedRoutes><RecordWallet /></ProtectedRoutes>} />
+
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   )

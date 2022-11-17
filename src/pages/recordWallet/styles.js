@@ -13,6 +13,7 @@ export const Header = styled.header`
     line-height: 31px;
     color: var(--white);
     font-family: 'Raleway', sans-serif;
+    text-transform: capitalize;
   }
 
   svg {

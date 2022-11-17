@@ -6,14 +6,20 @@ import { BiPlusCircle, BiMinusCircle } from "react-icons/bi";
 import MainTemplate from '../../components/mainTemplate';
 
 import { Header, CardInfo, Text, CardTextNotRegister, Button, ContentButton } from './styles';
+import { useNavigate } from 'react-router-dom';
 
 function RecordWallet() {
+  const navigate = useNavigate();
 
   const [userLogged, setUserLogged] = useState();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     setUserLogged(user);
+
+    if (!user) {
+      navigate('/');
+    }
     // eslint-disable-next-line
   }, []);
 

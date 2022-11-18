@@ -40,14 +40,19 @@ function RecordWallet() {
         </CardInfo>
 
         <ContentButton>
-          <Button className='buttonMargin'>
+          <Button
+            className='buttonMargin'
+            onClick={() => navigate('/tran-entry?type=E')}
+          >
             <BiPlusCircle />
 
             <p>Nova <br />
               entrada</p>
           </Button>
 
-          <Button>
+          <Button
+           onClick={() => navigate('/tran-exit?type=S')}
+          >
             <BiMinusCircle />
 
             <p>Nova <br />

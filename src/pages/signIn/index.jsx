@@ -24,8 +24,8 @@ function SignIn() {
   const { handleSubmit, setValue, getValues, formState } = useForm(formOptions);
   const { errors } = formState;
 
-  const handleGetValuesSignIn = (e) => {
-    e.preventDefault();
+  const handleGetValuesSignIn = () => {
+    if (Object.keys(errors).length > 0) return;
     const values = getValues();
 
     handleSignIn(values)
@@ -36,7 +36,7 @@ function SignIn() {
       <Content>
         <Title>MyWallet</Title>
 
-        <Form onSubmit={(e) => handleSubmit(handleGetValuesSignIn(e))}>
+        <Form onSubmit={handleSubmit(handleGetValuesSignIn)}>
           <InputStyled
             name='email'
             placeholder='E-mail'

@@ -7,6 +7,7 @@ import MainTemplate from '../../components/mainTemplate';
 
 import { Header, CardInfo, Text, CardTextNotRegister, Button, ContentButton } from './styles';
 import { useNavigate } from 'react-router-dom';
+import api from '../../services/api';
 
 function RecordWallet() {
   const navigate = useNavigate();
@@ -23,12 +24,25 @@ function RecordWallet() {
     // eslint-disable-next-line
   }, []);
 
+  const handleWalletExit = async () => {
+    await api.delete(`/logout/${userLogged._id}`);
+
+    navigate('/');
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  }
+
   return (
     <MainTemplate content={
       <>
         <Header>
           <h2>Olá, {userLogged?.name}</h2>
-          <IoMdExit />
+          <button
+            onClick={handleWalletExit}
+          >
+            <IoMdExit />
+          </button>
         </Header>
 
         <CardInfo>
@@ -51,7 +65,7 @@ function RecordWallet() {
           </Button>
 
           <Button
-           onClick={() => navigate('/tran-exit?type=S')}
+            onClick={() => navigate('/tran-exit?type=S')}
           >
             <BiMinusCircle />
 

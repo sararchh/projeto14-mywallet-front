@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createContext } from "react";
 import api from "../services/api";
 
@@ -9,6 +9,9 @@ export const UserContext = createContext({});
 
 export function UserContextProvider({ children }) {
   const navigate = useNavigate();
+
+  const [editMode, setEditMode] = useState(false);
+  const [dataTransaction, setDataTransaction] = useState([]);
 
   const handleSignUp = async (values) => {
     const obj = {
@@ -40,7 +43,7 @@ export function UserContextProvider({ children }) {
 
       localStorage.setItem('user', JSON.stringify(data.user));
       localStorage.setItem('token', data.token);
-      
+
       navigate('/my-wallet');
     } catch (error) {
       toast.error('Erro ao logar, verifique!');
@@ -51,7 +54,11 @@ export function UserContextProvider({ children }) {
     <UserContext.Provider
       value={{
         handleSignUp,
-        handleSignIn
+        handleSignIn, 
+        editMode,
+        setEditMode,
+        setDataTransaction,
+        dataTransaction
       }}>
       {children}
     </UserContext.Provider>

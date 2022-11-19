@@ -25,6 +25,7 @@ export const Header = styled.header`
 
 export const CardInfo = styled.div`
   max-height: 446px;
+  min-height: 446px;
   height: 446px;
   width: 326px;
   padding: 10px 0;
@@ -36,6 +37,18 @@ export const CardInfo = styled.div`
 
   border-radius: 5px;
   background-color: var(--white);
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  max-height: 400px;
+  height: 446px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  overflow: scroll;
 `;
 
 export const Card = styled.div`

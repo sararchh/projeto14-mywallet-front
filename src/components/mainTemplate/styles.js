@@ -9,4 +9,8 @@ export const Container = styled.div`
   flex-direction: column;
 
   background-color: var(--background);
+
+  .styledDiv {
+    justify-content: center;
+  }
 `;

@@ -10,7 +10,12 @@ export const GlobalStyle = createGlobalStyle`
   --purple: #A328D6;
 
   --white: #FFFFFF;
+  --gray : #C6C6C6;
+
   --black: #000000;
+
+  --green: #03AC00;
+  --red: #C70000;
 }
 
 *{
@@ -39,7 +44,7 @@ body{
   background: var(--background);
 }
 
-body, input, textarea, button {
+body, input, textarea, button, span {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   border: none;

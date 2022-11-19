@@ -24,23 +24,82 @@ export const Header = styled.header`
 `;
 
 export const CardInfo = styled.div`
+  max-height: 446px;
   height: 446px;
   width: 326px;
+  padding: 10px 0;
+  position: relative;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
 
   border-radius: 5px;
   background-color: var(--white);
+`;
+
+export const Card = styled.div`
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: 5px 0;
+
+  svg {
+    color: var(--gray);
+    width: 20px;
+    height: 18px;
+  }
+
+  span {
+    color: var(--gray);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    margin: 0 10px 0 0 ;
+  }
+
+  .divStyled {
+    display: flex;
+  }
+
+`;
+
+export const TextValues = styled.p`
+    color: ${({ color }) => color};
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    margin: 0 10px 0 0 ;
+`;
+
+export const TextTitleTransaction = styled.p`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
 `;
 
 export const Text = styled.p`
   font-size: 20px;
   font-weight: 400;
   line-height: 23px;
-  letter-spacing: 0em;
   text-align: center;
+`;
+
+export const CardSum = styled.div`
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 5px;
+
+  .textBalance {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 20px;
+  }
 `;
 
 export const CardTextNotRegister = styled.div`

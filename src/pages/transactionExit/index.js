@@ -32,7 +32,7 @@ function TransactionExit() {
   }, []);
 
   const validationSchema = Yup.object().shape({
-    valuesInput: Yup.number().required('O valor é obrigatório'),
+    valuesInput: Yup.number('Deve ser um número').required('O valor é obrigatório'),
     description: Yup.string().min(6, 'Minimo 6 caracteres').required('Descrição obrigatório')
   });
 
@@ -73,7 +73,6 @@ function TransactionExit() {
         <Form onSubmit={handleSubmit(handleGetValuesTransaction)}>
           <InputStyled
             name='valuesInput'
-            type='number'
             placeholder='Valor'
             onChange={value => setValue('valuesInput', value)}
             messageError={errors?.valuesInput?.message}

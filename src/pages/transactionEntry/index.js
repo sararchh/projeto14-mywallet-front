@@ -73,7 +73,6 @@ function TransactionEntry() {
         <Form onSubmit={handleSubmit(handleGetValuesTransaction)}>
           <InputStyled
             name='valuesInput'
-            type='number'
             placeholder='Valor'
             onChange={value => setValue('valuesInput', value)}
             messageError={errors?.valuesInput?.message}

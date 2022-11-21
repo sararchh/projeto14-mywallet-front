@@ -72,7 +72,7 @@ function SignUp() {
           />
 
           <ButtonStyled
-            children='Confirme a senha'
+            children='Cadastrar'
           />
         </Form>
 
